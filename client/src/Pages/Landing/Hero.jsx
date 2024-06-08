@@ -6,6 +6,7 @@ import { CategoriesCard } from "../../Components/LandingComponents/CategoriesCar
 import { ProductCard } from "../../Components/LandingComponents/ProductCard";
 import { ShopBanner } from "../../Components/LandingComponents/ShopBanner";
 import { useState,useEffect } from "react";
+import { Audio } from 'react-loader-spinner';
 
 export const Hero = () => {
   const [products, setProducts] = useState([]);
@@ -39,7 +40,15 @@ export const Hero = () => {
 
 
   if (loading) {
-    return <p>Loading...</p>;
+    return <div className="flex justify-center items-center"><Audio
+    height="80"
+    width="80"
+    radius="40"
+    color="orange"
+    ariaLabel="loading"
+    wrapperStyle
+    wrapperClass
+  /></div>;
   }
 
   if (error) {
