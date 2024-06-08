@@ -11,7 +11,7 @@ export const ProductCard = ({productImage,productName,productPrice,productDescri
         <p className='font-semibold pb-1 max-w-xs'>{productName}</p>
         <p className='font-bold text-lg opacity-80'>R{productPrice}</p>
         <p className='max-w-xs md:max-w-xl text-sm text-left py-5'>{productDescription}</p>
-        <button  className="bg-primary py-1 px-3 text-white  rounded-2xl hover:opacity-70 active:scale-50 duration-500">Add to cart</button>
+        <button  className="bg-primary py-3 px-4 text-white  rounded-3xl hover:opacity-70 active:scale-50 duration-500">Add to cart</button>
         </div>
        
     </div>
