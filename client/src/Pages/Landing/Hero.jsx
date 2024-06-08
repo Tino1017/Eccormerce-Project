@@ -5,8 +5,48 @@ import laptop from "./Assets/laptop.svg";
 import { CategoriesCard } from "../../Components/LandingComponents/CategoriesCard";
 import { ProductCard } from "../../Components/LandingComponents/ProductCard";
 import { ShopBanner } from "../../Components/LandingComponents/ShopBanner";
+import { useState,useEffect } from "react";
 
 export const Hero = () => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    // Fetch products from the API
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('https://fakestoreapi.com/products?limit=5');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        const randomProducts = selectRandomItems(data, 5); // Select 5 random products
+        setProducts(randomProducts);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []); // Empty dependency array means this effect runs once on mount
+  const selectRandomItems = (items, num) => {
+    const shuffled = items.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, num);
+  };
+
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
+
   const searchBtn = "Search";
   const categoryCardObject = [
     //{
@@ -55,14 +95,21 @@ export const Hero = () => {
       categoryLabel: "Tech",
     },
   ];
-  const shopBannerData = [{
-    shopName:'Nike Factory',
-    products:'12 Products'
-  }]
+  const shopBannerData = [
+    {
+      shopName: "Nike Factory",
+      products: "12 Products",
+    },
+  ];
 
   const dealsForYouData = [
-    { cardImage: laptop, productName: "Laptop", price: "2000", description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, quod.' }
-
+    {
+      cardImage: laptop,
+      productName: "Laptop",
+      price: "2000",
+      description:
+        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi, quod.",
+    },
   ];
 
   return (
@@ -94,6 +141,9 @@ export const Hero = () => {
       </section>
       {/* Categories Section */}
       <section>
+      <h1 className="text-2xl font-semibold text-center mt-5 lg:text-left">
+          Shop Our Top Categories
+        </h1>
         <div className="flex flex-col items-center justify-center gap-y-14 py-10 lg:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-x-10 xl:flex xl:flex-row xl:gap-x-4 xl:gap-y-0">
           {categoryCardObject.map((props, index) => (
             <CategoriesCard key={index} categoryImage={props.image} />
@@ -106,24 +156,29 @@ export const Hero = () => {
           Best Deals For You
         </h1>
         <div className="flex flex-col items-center justify-center gap-y-14 py-10 lg:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-x-10 xl:flex xl:flex-row xl:gap-x-4 xl:gap-y-0">
-          {dealsForYouData.map((props,index)=>(
-            <ProductCard key={index} productImage={props.cardImage}
-            productName={props.productName}
-            productPrice={props.price}
-            productDescription={props.description}/>
+          {products.map((props,index) => (
+            <ProductCard
+              key={index}
+              productImage={props.image}
+              productName={props.title}
+              productPrice={props.price}
+              productDescription={props.description}
+            />
           ))}
-
         </div>
       </section>
       {/* Choose By Shops Section */}
       <section>
-      <h1 className="text-2xl font-semibold text-center mt-5 lg:text-left">
+        <h1 className="text-2xl font-semibold text-center mt-5 lg:text-left">
           Choose By Shops
         </h1>
         <div className="flex flex-col items-center mb-10">
-          {shopBannerData.map((props,index)=>(
-            <ShopBanner key={index} shopName={props.shopName}
-            products={props.products}/>
+          {shopBannerData.map((props, index) => (
+            <ShopBanner
+              key={index}
+              shopName={props.shopName}
+              products={props.products}
+            />
           ))}
         </div>
       </section>
