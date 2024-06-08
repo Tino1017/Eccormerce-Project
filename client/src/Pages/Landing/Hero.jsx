@@ -40,7 +40,7 @@ export const Hero = () => {
 
 
   if (loading) {
-    return <div className="flex justify-center items-center"><Audio
+    return <div className="flex h-[85vh] justify-center items-center"><Audio
     height="80"
     width="80"
     radius="40"
