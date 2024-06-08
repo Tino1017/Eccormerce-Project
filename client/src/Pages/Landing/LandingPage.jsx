@@ -1,9 +1,11 @@
 import React from 'react';
-import {Navigation} from '../../Components/Navigation';
+import { HashLink as Link } from 'react-router-hash-link';
+
 const LandingPage = () => {
   return (
     <>
-    <Navigation/>
+    <Link to='/Create-Account'>Create Account</Link>
+    
     </>
   )
 }
