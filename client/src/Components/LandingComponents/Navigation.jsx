@@ -1,15 +1,13 @@
 import React, { useState } from "react";
-import { PrimaryBtn } from "../UI/PrimaryBtn";
-import { SecondaryBtn } from "../UI/SecondaryBtn";
-
+import { PrimaryBtn } from "../../UI/PrimaryBtn";
+import { SecondaryBtn } from "../../UI/SecondaryBtn";
+import logo from '../../Pages/Landing/Assets/logo.svg'
 
 export const Navigation = () => {
-    const [menuClicked,setMenuClicked]=useState();
-    const handleMenuClick = () => { 
-        setMenuClicked(!menuClicked)
-     };
-
-
+  const [menuClicked, setMenuClicked] = useState();
+  const handleMenuClick = () => {
+    setMenuClicked(!menuClicked);
+  };
 
   const navigationObject = [
     {
@@ -37,10 +35,12 @@ export const Navigation = () => {
   const secondaryBtn = ["Sign Up", "##"];
   return (
     <>
-      <div className="hidden lg:flex lg:items-center lg:max-w-5xl lg:mx-auto lg:justify-evenly border border-x-0 border-t-0 border-b-2 pb-2">
-        <div>logo</div>
+      <div className="hidden lg:flex lg:items-center lg:max-w-7xl lg:mx-auto lg:justify-evenly mt-2">
         <div>
-          {navigationObject.map((props, index) => (  
+          <img src={logo} alt="" />
+        </div>
+        <div>
+          {navigationObject.map((props, index) => (
             <a className="mr-14" key={index} href={props.navLink}>
               {props.navLabel}
             </a>
@@ -70,11 +70,12 @@ export const Navigation = () => {
             </a>
           ))}
         </div>
-        <div className="flex gap-10 justify-center">
+        <div className="flex gap-x-10 justify-center">
           <PrimaryBtn btnLabel={primaryBtn[0]} btnLink={primaryBtn[1]} />
           <SecondaryBtn btnLabel={secondaryBtn[0]} btnLink={secondaryBtn[1]} />
         </div>
       </div>
+      <div className="hidden lg:block border border-x-0 border-t-0 border-b-1 pb-2 shadow-sm"></div>
     </>
   );
 };
