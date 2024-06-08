@@ -13,7 +13,7 @@ export const UploadPicture = () => {
     <div
       
       className="relative flex h-[95vh] items-center justify-center "
-    >
+    id="upload-picture">
       <div className="relative z-[1] flex flex-col mx-auto text-center px-8 py-12 shadow-lg space-y-5 bg-white/65 rounded-lg">
         <h1 className="text-4xl font-medium mb-5">Profile Picture</h1>
         <div className="relative flex justify-center py-3">

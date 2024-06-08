@@ -1,10 +1,12 @@
-import React from 'react'
+import React from "react";
+import { HashLink as Link } from "react-router-hash-link";
 
-export const TransparentBtn = ({btnLabel,btnLink}) => {
+export const TransparentBtn = ({ btnLabel, btnLink }) => {
   return (
     <>
-    <a href={btnLink} className='text-primary font-semibold'>{btnLabel}</a>
+      <Link to={btnLink} className="text-primary font-semibold">
+        {btnLabel}
+      </Link>
     </>
-  )
-}
-
+  );
+};
