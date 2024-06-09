@@ -196,7 +196,7 @@ export const Hero = ({}) => {
         <h1 className="text-2xl font-semibold text-center mt-5 lg:text-left">
           Choose By Shops
         </h1>
-        <div className="hover:scale-105 flex flex-col items-center space-y-10 py-16 md:flex md:flex-row md:flex-wrap md:space-x-10">
+        <div className=" flex flex-col items-center space-y-10 py-16 md:space-y-0  md:flex md:flex-row md:flex-wrap md:space-x-10 lg:space-x-0 ">
           {shopBannerData.map((props, index) => (
             <ShopBanner
               key={index}
@@ -211,7 +211,7 @@ export const Hero = ({}) => {
         <h1 className="text-2xl font-semibold text-center mt-5 lg:text-left">
           Most Popular Products
         </h1>
-        <div className="flex flex-col items-center justify-center gap-y-10 py-5 lg:grid md:grid-cols-2 lg:grid-cols-4 lg:gap-x-5 md:items-start xl:gap-x-4 xl:gap-y-0">
+        <div className="flex flex-col items-center justify-center gap-y-10 py-5 lg:grid md:grid-cols-2 lg:grid-cols-4 lg:gap-x-5 md:items-start xl:gap-x-4 xl:gap-y-0 ">
           {products.map((props, index) => (
             <ProductCard
               key={index}
@@ -223,9 +223,7 @@ export const Hero = ({}) => {
           ))}
         </div>
       </section>
-      <section>
-        <img src={bottomImage} className='mb-10 w-[450px]' alt="" />
-      </section>
+      
     </>
   );
 };
