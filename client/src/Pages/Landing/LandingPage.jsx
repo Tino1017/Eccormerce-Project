@@ -9,8 +9,8 @@ const LandingPage = () => {
     <>
       <Navigation />
       <div className="lg:px-36">
-        
         <Hero />
+       
       </div>
     </>
   );

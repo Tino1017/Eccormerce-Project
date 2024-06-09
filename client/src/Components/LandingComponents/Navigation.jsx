@@ -3,7 +3,6 @@ import { PrimaryBtn } from "../../UI/PrimaryBtn";
 import { SecondaryBtn } from "../../UI/SecondaryBtn";
 import logo from '../../Pages/Landing/Assets/logo.svg'
 import { RiMenu3Line } from "react-icons/ri";
-import responsive from '../../Pages/Landing/Assets/responsive.svg'
 
 
 export const Navigation = () => {
@@ -65,10 +64,8 @@ export const Navigation = () => {
         </div>
       </div>
       {/* Responsive */}
-      <div>
-      <div className={!menuClicked ?"lg:hidden flex justify-between items-center px-5 pt-2 bg-transparent hidden" : 'hidden'}><img src={logo} width={150} alt=""/><button onClick={handleMenuClick}><RiMenu3Line fontSize={24} color="gray"/></button></div>
-        <img src={responsive} className='' style={{borderBottomLeftRadius:'90px',borderBottomRightRadius:'90px'}} alt="" /></div>
       
+      <div className={!menuClicked ?"lg:hidden flex justify-between items-center px-5 pt-2" : 'hidden'}><img src={logo} width={150} alt=""/><button onClick={handleMenuClick}><RiMenu3Line fontSize={24} color="gray"/></button></div>
       <div className={menuClicked?'h-[100vh] w-full fixed top-0 left-0 items-center z-10 space-y-5 pt-5 bg-white ':'hidden'}>
         <div className="flex flex-col items-center ">
           {navigationObject.map((props, index) => (

@@ -5,22 +5,27 @@ import laptop from "./Assets/laptop.svg";
 import { CategoriesCard } from "../../Components/LandingComponents/CategoriesCard";
 import { ProductCard } from "../../Components/LandingComponents/ProductCard";
 import { ShopBanner } from "../../Components/LandingComponents/ShopBanner";
-import { useState,useEffect } from "react";
-import { Audio } from 'react-loader-spinner';
+import { useState, useEffect } from "react";
+import { Audio } from "react-loader-spinner";
+import category1 from './Assets/category1.svg';
+import category2 from './Assets/category2.svg';
+import category3 from './Assets/category3.svg';
+import bottomImage from './Assets/bottomImage.svg'
 
 
-export const Hero = () => {
+export const Hero = ({}) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-   
     const fetchProducts = async () => {
       try {
-        const response = await fetch('https://fakestoreapi.com/products?limit=5');
+        const response = await fetch(
+          "https://fakestoreapi.com/products?limit=4"
+        );
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         const data = await response.json();
         const randomProducts = selectRandomItems(data, 5); // Select 5 random products
@@ -39,23 +44,25 @@ export const Hero = () => {
     return shuffled.slice(0, num);
   };
 
-
   if (loading) {
-    return <div className="flex h-[85vh] justify-center items-center"><Audio
-    height="80"
-    width="80"
-    radius="40"
-    color="orange"
-    ariaLabel="loading"
-    wrapperStyle
-    wrapperClass
-  /></div>;
+    return (
+      <div className="flex h-[85vh] justify-center items-center">
+        <Audio
+          height="80"
+          width="80"
+          radius="40"
+          color="orange"
+          ariaLabel="loading"
+          wrapperStyle
+          wrapperClass
+        />
+      </div>
+    );
   }
 
   if (error) {
     return <p>Error: {error}</p>;
   }
-
 
   const searchBtn = "Search";
   const categoryCardObject = [
@@ -84,7 +91,7 @@ export const Hero = () => {
       categoryLabel: "Tech",
     },
     {
-      image: laptop,
+      image: category1,
       categoryLabel: "Tech",
     },
     {
@@ -92,21 +99,28 @@ export const Hero = () => {
       categoryLabel: "Tech",
     },
     {
-      image: laptop,
+      image: category2,
       categoryLabel: "Tech",
     },
     {
-      image: laptop,
+      image: category3,
       categoryLabel: "Tech",
     },
+    
+   
 
-    {
-      image: laptop,
-      categoryLabel: "Tech",
-    },
   ];
   const shopBannerData = [
     {
+      shopName: "Nike Factory",
+      products: "12 Products",
+    }, {
+      shopName: "Nike Factory",
+      products: "12 Products",
+    }, {
+      shopName: "Nike Factory",
+      products: "12 Products",
+    }, {
       shopName: "Nike Factory",
       products: "12 Products",
     },
@@ -126,7 +140,7 @@ export const Hero = () => {
     <>
       {/* Hero Image */}
       <section
-        className="hidden hero p-36 mt-10 rounded-2xl"
+        className="hidden xl:block hero p-36 mt-10 rounded-2xl"
         style={{
           backgroundImage: `url(${HeroImage})`,
           backgroundPosition: "center",
@@ -151,7 +165,7 @@ export const Hero = () => {
       </section>
       {/* Categories Section */}
       <section>
-      <h1 className="text-2xl font-semibold text-center mt-5 lg:text-left">
+        <h1 className="text-2xl font-semibold text-center mt-5 lg:text-left">
           Shop Our Top Categories
         </h1>
         <div className="flex flex-col items-center justify-center gap-y-14 py-10 lg:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-x-10 xl:flex xl:flex-row xl:gap-x-4 xl:gap-y-0">
@@ -165,14 +179,14 @@ export const Hero = () => {
         <h1 className="text-2xl font-semibold text-center mt-5 lg:text-left">
           Best Deals For You
         </h1>
-        <div className="flex flex-col items-center justify-center gap-y-14 py-10 lg:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-x-10 xl:flex xl:flex-row xl:gap-x-4 xl:gap-y-0">
-          {products.map((props,index) => (
+        <div className="flex flex-col items-center justify-center gap-y-10 py-10 lg:grid md:grid-cols-2 lg:grid-cols-4 lg:gap-x-5 md:items-start xl:gap-x-4 xl:gap-y-0">
+          {products.map((props, index) => (
             <ProductCard
               key={index}
               productImage={props.image}
               productName={props.title}
               productPrice={props.price}
-              productDescription={props.description}
+              // productDescription={props.description}
             />
           ))}
         </div>
@@ -182,7 +196,7 @@ export const Hero = () => {
         <h1 className="text-2xl font-semibold text-center mt-5 lg:text-left">
           Choose By Shops
         </h1>
-        <div className="flex flex-col items-center mb-10">
+        <div className="hover:scale-105 flex flex-col items-center space-y-10 py-16 md:flex md:flex-row md:flex-wrap md:space-x-10">
           {shopBannerData.map((props, index) => (
             <ShopBanner
               key={index}
@@ -191,6 +205,26 @@ export const Hero = () => {
             />
           ))}
         </div>
+      </section>
+      {/* Popular */}
+      <section>
+        <h1 className="text-2xl font-semibold text-center mt-5 lg:text-left">
+          Most Popular Products
+        </h1>
+        <div className="flex flex-col items-center justify-center gap-y-10 py-5 lg:grid md:grid-cols-2 lg:grid-cols-4 lg:gap-x-5 md:items-start xl:gap-x-4 xl:gap-y-0">
+          {products.map((props, index) => (
+            <ProductCard
+              key={index}
+              productImage={props.image}
+              productName={props.title}
+              productPrice={props.price}
+              // productDescription={props.description}
+            />
+          ))}
+        </div>
+      </section>
+      <section>
+        <img src={bottomImage} className='mb-10 w-[450px]' alt="" />
       </section>
     </>
   );
