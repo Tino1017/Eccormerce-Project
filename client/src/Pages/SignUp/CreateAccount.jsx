@@ -11,8 +11,8 @@ export const CreateAccount = () => {
         id="create-account"
         className="relative flex h-[95vh] items-center justify-center "
       >
-        <div className="relative z-[1] flex flex-col mx-auto text-center px-8 py-16 shadow-lg space-y-5 bg-white/65 rounded-lg">
-          <h1 className="text-3xl font-medium mb-5">Create Account</h1>
+        <div className="relative z-[1] flex flex-col mx-auto text-center px-5 py-16 shadow-lg space-y-5 bg-white/90 rounded-lg">
+          <h1 className="text-3xl font-semibold mb-5">Create Account</h1>
           <div className="flex justify-center space-x-5 text-xs font-semibold pb-3">
             <button>Customer Account</button>
             <button>Shopper Account</button>
@@ -20,19 +20,19 @@ export const CreateAccount = () => {
           <input
             type="email"
             placeholder="Email Address"
-            className="bg-transparent border-[1.5px] rounded-lg p-2 border-gray-500  outline-none"
+            className="w-[322px] bg-transparent border-[1.5px] rounded-lg py-1 px-2 border-gray-500  outline-none"
             required
           />
           <input
             type="password"
             placeholder="Create Password"
-            className="bg-transparent border-[1.5px] rounded-lg p-2 border-gray-500  outline-none"
+            className="bg-transparent border-[1.5px] rounded-lg p-1 px-2 border-gray-500  outline-none"
             required
           />
           <input
             type="password"
             placeholder="Confirm Password"
-            className="bg-transparent border-[1.5px] rounded-lg p-2 border-gray-500  outline-none"
+            className="bg-transparent border-[1.5px] rounded-lg p-1 px-2 border-gray-500  outline-none"
             required
           />
           <SquarePrimaryBtn

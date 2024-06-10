@@ -6,7 +6,7 @@ export const SquarePrimaryBtn = ({btnLabel,btnLink}) => {
     <>
       <Link
         to={btnLink}
-        className="bg-primary py-2 px-24 text-white  rounded-lg  hover:opacity-70 active:scale-50 duration-500"
+        className="bg-primary font-semibold py-2 px-24 text-white  rounded-lg  hover:opacity-70 active:scale-50 duration-500"
       >
     {btnLabel}
       </Link>
