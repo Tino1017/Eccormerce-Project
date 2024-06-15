@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { PrimaryBtn } from "../../UI/PrimaryBtn";
 import { SecondaryBtn } from "../../UI/SecondaryBtn";
-import logo from '../../Pages/Landing/Assets/logo.svg'
+import logo from "../../Pages/Landing/Assets/logo.svg";
 import { RiMenu3Line } from "react-icons/ri";
-
+import { HiOutlineMenu } from "react-icons/hi";
+import { RxPerson } from "react-icons/rx";
 
 export const Navigation = () => {
   const [menuClicked, setMenuClicked] = useState();
@@ -34,7 +35,7 @@ export const Navigation = () => {
     },
   ];
   const primaryBtn = ["Sign In", "/"];
-  const secondaryBtn = ["Sign Up", "Create-Account"];
+  const secondaryBtn = ["Sign Up", "/Create-Account"];
   return (
     <>
       <div className="hidden lg:flex lg:items-center lg:max-w-7xl lg:mx-auto lg:justify-evenly mt-2">
@@ -50,7 +51,7 @@ export const Navigation = () => {
         </div>
         <div className="flex space-x-5">
           <a
-            href=""
+            href="/Create-Account"
             className="bg-primary py-1 px-3 text-white  rounded-2xl hover:opacity-70 active:scale-50 duration-500"
           >
             Sign Up
@@ -64,9 +65,31 @@ export const Navigation = () => {
         </div>
       </div>
       {/* Responsive */}
-      
-      <div className={!menuClicked ?"lg:hidden flex justify-between items-center px-5 pt-2" : 'hidden'}><img src={logo} width={150} alt=""/><button onClick={handleMenuClick}><RiMenu3Line fontSize={24} color="gray"/></button></div>
-      <div className={menuClicked?'h-[100vh] w-full fixed top-0 left-0 items-center z-10 space-y-5 pt-5 bg-white ':'hidden'}>
+
+      <div
+        className={
+          !menuClicked
+            ? "lg:hidden flex justify-between items-center px-5 pt-2 py-2"
+            : "hidden"
+        }
+      >
+        <img src={logo} width={100} alt="Logo-Image" />
+        <div className="flex gap-x-2 items-center">
+          <button onClick={handleMenuClick}>
+            <RxPerson fontSize={28} fontWeight={'bold'} color="gray" />
+          </button>
+          <button onClick={handleMenuClick}>
+            <HiOutlineMenu fontSize={28} color="gray" />
+          </button>
+        </div>
+      </div>
+      <div
+        className={
+          menuClicked
+            ? "h-[100vh] w-full fixed top-0 left-0 items-center z-10 space-y-5 pt-5 bg-white "
+            : "hidden"
+        }
+      >
         <div className="flex flex-col items-center ">
           {navigationObject.map((props, index) => (
             <a className="my-5" href={props.navLink} key={index}>

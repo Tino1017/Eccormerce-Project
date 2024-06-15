@@ -163,66 +163,8 @@ export const Hero = ({}) => {
           </div>
         </div>
       </section>
-      {/* Categories Section */}
-      <section>
-        <h1 className="text-2xl font-semibold text-center mt-5 lg:text-left">
-          Shop Our Top Categories
-        </h1>
-        <div className="flex flex-col items-center justify-center gap-y-14 py-10 lg:grid md:grid-cols-2 lg:grid-cols-3 lg:gap-x-10 xl:flex xl:flex-row xl:gap-x-4 xl:gap-y-0">
-          {categoryCardObject.map((props, index) => (
-            <CategoriesCard key={index} categoryImage={props.image} />
-          ))}
-        </div>{" "}
-      </section>
-      {/* Deals For You! */}
-      <section>
-        <h1 className="text-2xl font-semibold text-center mt-5 lg:text-left">
-          Best Deals For You
-        </h1>
-        <div className="flex flex-col items-center justify-center gap-y-10 py-10 lg:grid md:grid-cols-2 lg:grid-cols-4 lg:gap-x-5 md:items-start xl:gap-x-4 xl:gap-y-0">
-          {products.map((props, index) => (
-            <ProductCard
-              key={index}
-              productImage={props.image}
-              productName={props.title}
-              productPrice={props.price}
-              // productDescription={props.description}
-            />
-          ))}
-        </div>
-      </section>
-      {/* Choose By Shops Section */}
-      <section>
-        <h1 className="text-2xl font-semibold text-center mt-5 lg:text-left">
-          Choose By Shops
-        </h1>
-        <div className=" flex flex-col items-center space-y-10 py-16 md:space-y-0  md:flex md:flex-row md:flex-wrap md:space-x-10 lg:space-x-0 ">
-          {shopBannerData.map((props, index) => (
-            <ShopBanner
-              key={index}
-              shopName={props.shopName}
-              products={props.products}
-            />
-          ))}
-        </div>
-      </section>
-      {/* Popular */}
-      <section>
-        <h1 className="text-2xl font-semibold text-center mt-5 lg:text-left">
-          Most Popular Products
-        </h1>
-        <div className="flex flex-col items-center justify-center gap-y-10 py-5 lg:grid md:grid-cols-2 lg:grid-cols-4 lg:gap-x-5 md:items-start xl:gap-x-4 xl:gap-y-0 ">
-          {products.map((props, index) => (
-            <ProductCard
-              key={index}
-              productImage={props.image}
-              productName={props.title}
-              productPrice={props.price}
-              // productDescription={props.description}
-            />
-          ))}
-        </div>
-      </section>
+     
+     
       
     </>
   );
