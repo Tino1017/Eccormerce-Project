@@ -48,8 +48,8 @@ const ActiveSlider = ({ array }) => {
           },
         }}
       >
-        {array.map((item) => (
-          <SwiperSlide
+        {array.map((item,index) => (
+          <SwiperSlide key={index}
             className="flex flex-col w-full h-auto  items-center text-left"
             style={{ width: "200px" }}
           >
@@ -57,9 +57,9 @@ const ActiveSlider = ({ array }) => {
             <div className="relative">
               <img src={item.backgroundImage} className="w-96 " alt="" />
               <div className="absolute inset-0 bg-black opacity-0 hover:opacity-20 transition-opacity duration-300" />
-              
+              <p className="absolute p-4 text-xl mt-2">{item.title}</p>
             </div>
-            <p className="text-xl mt-2">{item.title}</p>
+            
             </div>
            
           </SwiperSlide>

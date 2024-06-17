@@ -79,7 +79,7 @@ export const Navigation = () => {
             <RxPerson fontSize={28} fontWeight={'bold'} color="gray" />
           </button>
           <button onClick={handleMenuClick}>
-            <HiOutlineMenu fontSize={28} color="gray" />
+            <HiOutlineMenu fontSize={30} color="gray" />
           </button>
         </div>
       </div>

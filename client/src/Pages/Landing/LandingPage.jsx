@@ -7,7 +7,7 @@ import { ServiceData } from "../../Components/api/constants.index";
 import { Sections } from "../../Components/LandingComponents/Sections";
 import ResponsiveHero from "./ResponsiveHero";
 import { Footer } from "./Footer";
-
+import { Popular } from "../../Components/api/Popular.index";
 
 const LandingPage = () => {
   return (
@@ -15,21 +15,35 @@ const LandingPage = () => {
       <Navigation />
       <div className="lg:px-36">
         <Hero />
-        <ResponsiveHero/>
-        
-
+        <ResponsiveHero />
       </div>
       <div className="pl-5">
-      <Sections 
-      heading={'Shop Our Categories'}
-      sliderComponent={<ActiveSlider
-      array={ServiceData}/>}/>
-      <Sections heading={'Best Deals For You'}
-      sliderComponent={<ActiveSlider
-        array={ServiceData}/>}/>
+        <Sections
+          heading={"Shop Our Categories"}
+          sliderComponent={<ActiveSlider array={ServiceData} />}
+        />
+
+        <Sections
+          heading={"Popular Products"}
+          sliderComponent={<ActiveSlider array={Popular} />}
+        />
+        <Sections
+          heading={"Best Deals For You"}
+          sliderComponent={<ActiveSlider array={ServiceData} />}
+        />
+        <Sections
+          heading={"Choose By Shops"}
+          sliderComponent={<ActiveSlider array={ServiceData} />}
+        />
+
+        <Sections
+          heading={"Featured Products"}
+          sliderComponent={<ActiveSlider array={ServiceData} />}
+        />
       </div>
-      <Footer/>
-      
+
+      <Footer />
+
       {/* <ActiveSlider
         array={ServiceData} /> */}
     </>

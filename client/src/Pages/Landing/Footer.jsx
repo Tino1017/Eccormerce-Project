@@ -29,11 +29,11 @@ export const Footer = () => {
 
   return (
     <>
-      <footer className="flex flex-col items-start justify-center pl-7 gap-y-5">
+      <footer className="flex flex-col items-start justify-center p-10 gap-y-10 bg-[#393434] text-white">
         
         <div><img src={logo} alt="" /></div>
 
-        <div className="flex gap-x-10">
+        <div className="flex gap-x-16">
         <div>{footerData.pages.map((props,index)=>(
             <p key={index}>{props}</p>
         ))}</div>
@@ -46,7 +46,7 @@ export const Footer = () => {
             <h1>News Letter Subscription</h1>
             <p className="max-w-[250px]">Get the latest products and best deals in your inbox as first person</p>
             <div>
-                <input type="text" placeholder="Email Adress" />
+                <input type="text" placeholder="Email Adress" className="bg-transparent outline-none" />
                 <PrimaryBtn btnLabel={'Submit'}/>
 
             </div>
