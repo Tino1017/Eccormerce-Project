@@ -7,9 +7,9 @@ const ResponsiveHero = () => {
   ];
 
   return (
-    <div>
+    <div className="lg:hidden">
       <div className="w-full bg-black/5  h-12 flex items-center justify-center ">
-        <p className="font-medium text-lg">
+        <p className="font-medium text-md">
           ALL NEW USERS RECEIVE <span className="underline">30% OFF</span>{" "}
         </p>
       </div>
@@ -22,7 +22,7 @@ const ResponsiveHero = () => {
           backgroundSize: "contain",
         }}
       >
-        <h1 className="max-w-xs font-bold text-4xl text-white pb-5">
+        <h1 className="max-w-xs font-bold text-5xl text-white pb-5">
           Finding The Best Products With Reliability
         </h1>
         <button className="bg-white text-xl px-4 py-1 font-medium rounded-full hover:bg-white/70">

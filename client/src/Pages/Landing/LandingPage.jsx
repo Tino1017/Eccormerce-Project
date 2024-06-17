@@ -6,6 +6,8 @@ import ActiveSlider from "../../Components/LandingComponents/ActiveSlider";
 import { ServiceData } from "../../Components/api/constants.index";
 import { Sections } from "../../Components/LandingComponents/Sections";
 import ResponsiveHero from "./ResponsiveHero";
+import { Footer } from "./Footer";
+
 
 const LandingPage = () => {
   return (
@@ -26,6 +28,7 @@ const LandingPage = () => {
       sliderComponent={<ActiveSlider
         array={ServiceData}/>}/>
       </div>
+      <Footer/>
       
       {/* <ActiveSlider
         array={ServiceData} /> */}

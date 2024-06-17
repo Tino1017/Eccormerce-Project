@@ -59,7 +59,7 @@ const ActiveSlider = ({ array }) => {
               <div className="absolute inset-0 bg-black opacity-0 hover:opacity-20 transition-opacity duration-300" />
               
             </div>
-            <p className="text-lg">{item.title}</p>
+            <p className="text-xl mt-2">{item.title}</p>
             </div>
            
           </SwiperSlide>

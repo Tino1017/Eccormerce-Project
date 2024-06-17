@@ -140,7 +140,7 @@ export const Hero = ({}) => {
     <>
       {/* Hero Image */}
       <section
-        className="hidden xl:block hero p-36 mt-10 rounded-2xl"
+        className="hidden lg:block hero p-36 mt-10 rounded-2xl"
         style={{
           backgroundImage: `url(${HeroImage})`,
           backgroundPosition: "center",
