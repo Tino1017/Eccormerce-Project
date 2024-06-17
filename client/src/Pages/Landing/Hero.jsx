@@ -149,7 +149,7 @@ export const Hero = ({}) => {
         }}
       >
         <div className="">
-          <h1 className="text-4xl max-w-md font-normal mb-10">
+          <h1 className="text-4xl max-w-md font-bold mb-10">
             Find The Best Products With{" "}
             <span className="text-primary">Reliability</span>
           </h1>
