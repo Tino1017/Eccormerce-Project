@@ -107,17 +107,21 @@ export const brandData = [
     title: "",
     backgroundImage:
       "https://images.unsplash.com/photo-1651853082640-6182f59f2a74?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTU2fHxicmFuZCUyMGxvZ298ZW58MHwwfDB8fHww",
+      brand:'Apple'
   },
   {
     title: "",
     backgroundImage: "https://images.unsplash.com/photo-1555274175-75f4056dfd05?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YnJhbmQlMjBsb2dvfGVufDB8MHwwfHx8MA%3D%3D",
+    brand:'Adidas'
   },
   {
     title: "",
     backgroundImage: "https://images.unsplash.com/photo-1608541737042-87a12275d313?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmlrZSUyMGxvZ298ZW58MHwwfDB8fHww",
+    brand:'Nike'
   },
   {
     title: "",
     backgroundImage: "https://images.unsplash.com/photo-1548298819-61f4d976aea4?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8",
+    brand:'Puma'
   },
 ];
