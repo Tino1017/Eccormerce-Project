@@ -15,6 +15,13 @@ import category1 from "../../Pages/Landing/Assets/category1.svg";
 //   import category1 from "../assets/category1.jpeg";
 //   import category1 from "../assets/category1.jpeg";
 
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
 export const ServiceData = [
   {
     title: "Clothing",
@@ -43,18 +50,24 @@ export const dealsData = [
     title: "",
     backgroundImage:
       "https://images.unsplash.com/photo-1605648916361-9bc12ad6a569?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      productName:'HomePod Mini',
+      price:`R ${getRandomInt(500,600)}`
   },
 
   {
     title: "",
     backgroundImage:
       "https://images.unsplash.com/photo-1564558833470-f2ed5bf5675a?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTYyfHxhcHBsaWFuY2V8ZW58MHwwfDB8fHww",
+       productName:'Shaving Set',
+      price:`R ${getRandomInt(300,400)}`
   },
 
   {
     title: "",
     backgroundImage:
       "https://images.unsplash.com/photo-1596192799783-2e28fef10f57?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQzfHxhcHBsaWFuY2V8ZW58MHwwfDB8fHww",
+       productName:'Phantom 4 Drone',
+      price:`R ${getRandomInt(700,800)}`
   },
 ];
 
@@ -63,20 +76,48 @@ export const featureProducts = [
     title: "",
     backgroundImage:
       "https://plus.unsplash.com/premium_photo-1705169612315-43114c0a59ee?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fGRlc2slMjBsYW1wfGVufDB8MHwwfHx8MA%3D%3D",
+       productName:'',
+      price:''
   },
   {
     title: "",
     backgroundImage:
       "https://images.unsplash.com/photo-1567538096621-38d2284b23ff?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGNoYWlyfGVufDB8MHwwfHx8MA%3D%3D",
+       productName:'',
+      price:''
   },
   {
     title: "",
     backgroundImage:
       "https://images.unsplash.com/photo-1637316285601-31118d9e71e1?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTMxfHxjaGFtcGFnbmV8ZW58MHwwfDB8fHww",
+       productName:'',
+      price:''
   },
   {
     title: "",
     backgroundImage:
       "https://images.unsplash.com/photo-1526198330131-9b0bc79625e4?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dmFzZXxlbnwwfDB8MHx8fDA%3D",
+       productName:'',
+      price:''
+  },
+];
+
+export const brandData = [
+  {
+    title: "",
+    backgroundImage:
+      "https://images.unsplash.com/photo-1651853082640-6182f59f2a74?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTU2fHxicmFuZCUyMGxvZ298ZW58MHwwfDB8fHww",
+  },
+  {
+    title: "",
+    backgroundImage: "https://images.unsplash.com/photo-1555274175-75f4056dfd05?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YnJhbmQlMjBsb2dvfGVufDB8MHwwfHx8MA%3D%3D",
+  },
+  {
+    title: "",
+    backgroundImage: "https://images.unsplash.com/photo-1608541737042-87a12275d313?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmlrZSUyMGxvZ298ZW58MHwwfDB8fHww",
+  },
+  {
+    title: "",
+    backgroundImage: "https://images.unsplash.com/photo-1548298819-61f4d976aea4?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8",
   },
 ];

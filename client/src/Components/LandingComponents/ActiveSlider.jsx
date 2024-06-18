@@ -54,11 +54,13 @@ const ActiveSlider = ({ array }) => {
             style={{ width: "200px" }}
           >
             <div>
-            <div className="relative">
+            <div className="relative group">
               <img src={item.backgroundImage} className="w-96 " alt="" />
               <div className="absolute inset-0 bg-black opacity-0 hover:opacity-20 transition-opacity duration-300" />
-              <p className="absolute p-4 text-xl mt-2">{item.title}</p>
+              <p className="absolute top-0 left-0 p-4 text-2xl mt-2 text-black opacity-90 " >{item.title}</p>
             </div>
+            <p className="font-bold text-lg pt-5">{item.productName}</p>
+            <p className="font-bold text-gray-600">{item.price}</p>
             
             </div>
            

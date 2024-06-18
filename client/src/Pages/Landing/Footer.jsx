@@ -35,15 +35,15 @@ export const Footer = () => {
 
         <div className="flex gap-x-16">
         <div>{footerData.pages.map((props,index)=>(
-            <p key={index}>{props}</p>
+            <a href='' key={index}>{props}</a>
         ))}</div>
         <div>{categories.map((props,index)=>(
-            <p key={index}>{props}</p>
+            <a href="" key={index}>{props}</a>
         ))}</div>
         </div>
 
         <div className="">
-            <h1>News Letter Subscription</h1>
+            <h1 className="font-bold text-primary">News Letter Subscription</h1>
             <p className="max-w-[250px]">Get the latest products and best deals in your inbox as first person</p>
             <div>
                 <input type="text" placeholder="Email Adress" className="bg-transparent outline-none" />
@@ -53,7 +53,7 @@ export const Footer = () => {
         </div>
         
         <div>
-            <h1>Contact Us</h1>
+            <h1 className="font-bold text-primary">Contact Us</h1>
             <p>{footerData.contactInformation.contactText}</p>
             <p>{footerData.contactInformation.email}</p>
             <p>{footerData.contactInformation.number}</p>

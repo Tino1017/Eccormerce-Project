@@ -10,7 +10,7 @@ import { Footer } from "./Footer";
 import { Popular } from "../../Components/api/Popular.index";
 import { dealsData } from "../../Components/api/constants.index";
 import { featureProducts } from "../../Components/api/constants.index";
-
+import { brandData } from "../../Components/api/constants.index";
 
 const LandingPage = () => {
   return (
@@ -35,8 +35,8 @@ const LandingPage = () => {
           sliderComponent={<ActiveSlider array={dealsData} />}
         />
         <Sections
-          heading={"Choose By Shops"}
-          sliderComponent={<ActiveSlider array={ServiceData} />}
+          heading={"Choose By Brand"}
+          sliderComponent={<ActiveSlider array={brandData} />}
         />
 
         <Sections
