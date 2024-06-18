@@ -18,8 +18,8 @@ const ActiveSlider = ({ array }) => {
         modules={[Navigation, Pagination, Scrollbar, A11y, FreeMode]}
         spaceBetween={10}
         slidesPerView={1.2}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
+        // onSwiper={(swiper) => console.log(swiper)}
+        // onSlideChange={() => console.log("slide change")}
         className=" w-full h-full "
         breakpoints={{
           320: {

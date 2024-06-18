@@ -18,51 +18,51 @@ export const Hero = ({}) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch(
-          "https://fakestoreapi.com/products?limit=4"
-        );
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const data = await response.json();
-        const randomProducts = selectRandomItems(data, 5); // Select 5 random products
-        setProducts(randomProducts);
-      } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     try {
+  //       const response = await fetch(
+  //         "https://fakestoreapi.com/products?limit=4"
+  //       );
+  //       if (!response.ok) {
+  //         throw new Error("Network response was not ok");
+  //       }
+  //       const data = await response.json();
+  //       const randomProducts = selectRandomItems(data, 5); // Select 5 random products
+  //       setProducts(randomProducts);
+  //     } catch (error) {
+  //       setError(error.message);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    fetchProducts();
-  }, []); // Empty dependency array means this effect runs once on mount
-  const selectRandomItems = (items, num) => {
-    const shuffled = items.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, num);
-  };
+  //   fetchProducts();
+  // }, []); // Empty dependency array means this effect runs once on mount
+  // const selectRandomItems = (items, num) => {
+  //   const shuffled = items.sort(() => 0.5 - Math.random());
+  //   return shuffled.slice(0, num);
+  // };
 
-  if (loading) {
-    return (
-      <div className="flex h-[85vh] justify-center items-center">
-        <Audio
-          height="80"
-          width="80"
-          radius="40"
-          color="orange"
-          ariaLabel="loading"
-          wrapperStyle
-          wrapperClass
-        />
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div className="flex h-[85vh] justify-center items-center">
+  //       <Audio
+  //         height="80"
+  //         width="80"
+  //         radius="40"
+  //         color="orange"
+  //         ariaLabel="loading"
+  //         wrapperStyle
+  //         wrapperClass
+  //       />
+  //     </div>
+  //   );
+  // }
 
-  if (error) {
-    return <p>Error: {error}</p>;
-  }
+  // if (error) {
+  //   return <p>Error: {error}</p>;
+  // }
 
   const searchBtn = "Search";
   const categoryCardObject = [

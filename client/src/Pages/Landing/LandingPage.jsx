@@ -8,6 +8,9 @@ import { Sections } from "../../Components/LandingComponents/Sections";
 import ResponsiveHero from "./ResponsiveHero";
 import { Footer } from "./Footer";
 import { Popular } from "../../Components/api/Popular.index";
+import { dealsData } from "../../Components/api/constants.index";
+import { featureProducts } from "../../Components/api/constants.index";
+
 
 const LandingPage = () => {
   return (
@@ -29,7 +32,7 @@ const LandingPage = () => {
         />
         <Sections
           heading={"Best Deals For You"}
-          sliderComponent={<ActiveSlider array={ServiceData} />}
+          sliderComponent={<ActiveSlider array={dealsData} />}
         />
         <Sections
           heading={"Choose By Shops"}
@@ -38,7 +41,7 @@ const LandingPage = () => {
 
         <Sections
           heading={"Featured Products"}
-          sliderComponent={<ActiveSlider array={ServiceData} />}
+          sliderComponent={<ActiveSlider array={featureProducts} />}
         />
       </div>
 
